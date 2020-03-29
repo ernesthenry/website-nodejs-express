@@ -5,14 +5,14 @@ const app = express()
 
 const port = 3000;
 
-app.use(express.static(path.join(__dirname, './static')))
+app.use(express.static(path.join(__dirname, './provided/static')))
 
 app.get('/', (request, response) => {
-    response.sendFile(path.join(__dirname, './static/index.html'))
+    response.sendFile(path.join(__dirname, '.provided/static/index.html'))
 })
 
 app.get('/speakers', (request, response) => {
-    response.sendFile(path.join(__dirname, './static/speakers.html'))
+    response.sendFile(path.join(__dirname, '.provided/static/speakers.html'))
 })
 
 app.listen(port, () =>{
